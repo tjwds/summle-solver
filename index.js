@@ -6,7 +6,7 @@ const START = [4, 5, "5.0", 6, 12, 25];
 // XXX Okay, this is a really fun hack; I just kind of eyeballed this until it
 //     felt like the program was running the fastest.  This keeps running speeds
 //     _shockingly_ low.
-const DICTIONARY_LENGTH_LIMIT = 300;
+const DICTIONARY_LENGTH_LIMIT = 50;
 
 const OPERATIONS = [
   (a, b) => a + b,
@@ -45,9 +45,6 @@ while (true) {
 
   if (dictionaryKeyLength > DICTIONARY_LENGTH_LIMIT) {
     // XXX Bad luck, it's surprisingly faster if we just start again here.
-    console.log(
-      `Didn't hit after ${DICTIONARY_LENGTH_LIMIT} numbers discovered; let's clear out the dictionary.`
-    );
     refreshDictionaries();
     continue;
   }
